@@ -1,0 +1,20 @@
+<div>
+  <%= @airplane.id %>
+</div>
+
+<div>
+  <%= @airplane.model %>
+</div>
+
+<div>
+  <%= @airplane.rows %>
+</div>
+
+<div>
+  <%= @airplane.columns %>
+</div>
+
+<div class="controls">
+  <%= link_to 'Edit', edit_airplane_path %>
+  <%= link_to 'Delete', @airplane, :method=>'delete' %>
+</div>
