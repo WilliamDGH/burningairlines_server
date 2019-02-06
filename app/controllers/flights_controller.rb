@@ -1,4 +1,8 @@
 class FlightsController < ApplicationController
+  def search
+    @flights = Flight.where("#{params[:query]} = '#{params[:value]}'")
+  end
+
   def index
     @flights = Flight.all
   end
