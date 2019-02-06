@@ -16,7 +16,13 @@
       <%= link_to 'Home', root_path %>
       <%= link_to 'Airplane', airplanes_path %>
       <%= link_to 'Flight', flights_path %>
-      
+      <% unless current_user %>
+      <%= link_to 'sign in', user_session_path	 %>
+      <%= link_to 'sign up', new_user_registration_path	 %>
+      <% end %>
+      <% if current_user %>
+      <%= link_to "Log out #{current_user.email}", destroy_user_session_path, :method=>'delete' %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
