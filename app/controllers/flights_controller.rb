@@ -9,6 +9,7 @@ class FlightsController < ApplicationController
 
   def show
     @flight = Flight.find params[:id]
+    @flight_json = [@flight]
   end
 
   def new

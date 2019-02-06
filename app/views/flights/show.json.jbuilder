@@ -1,4 +1,4 @@
-json.flights @flights do |flight|
+json.flights @flight_json do |flight|
   json.id flight.id
   json.flight_number flight.flight_number
   json.origin flight.origin
