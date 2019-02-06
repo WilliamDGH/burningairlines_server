@@ -1,0 +1,42 @@
+<h1>Flight#show</h1>
+
+<div>
+  <%= @flight.id %>
+</div>
+
+<div>
+  <%= @flight.flight_number %>
+</div>
+
+<div>
+  <%= @flight.origin %>
+</div>
+
+<div>
+  <%= @flight.destination %>
+</div>
+
+<div>
+  <%= @flight.date %>
+</div>
+
+<div>
+  <%= @flight.airplane.model %>
+</div>
+
+<% for i in 1..@flight.airplane.rows do %>
+  <% for j in 1..@flight.airplane.columns do  %>
+    <%= form_tag reservations_path do %>
+      <input type="hidden" name="flight_id" value=<%= @flight.id %>>
+      <input type="hidden" name="user_id" value="1">
+      <input type="hidden" name="row" value=<%= i %>>
+      <input type="hidden" name="column" value=<%= j %>>
+      <input type="submit" value="row: <%= i %>, col: <%= j %>">
+    <% end %>
+  <% end %>
+<% end %>
+
+<div class="controls">
+  <%= link_to 'Edit', edit_flight_path %>
+  <%= link_to 'Delete', @flight, :method=>'delete' %>
+</div>

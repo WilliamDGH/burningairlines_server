@@ -1,8 +1,17 @@
+<h1>Airplanes#index</h1>
+
+<%= link_to 'New', new_airplane_path %>
 <% @airplanes.each do |a| %>
   <div>
     <%= a.id %>
     <%= a.model %>
     <%= a.rows %>
     <%= a.columns %>
+
+    <div class="controls">
+      <%= link_to 'View', a %>
+      <%= link_to 'Edit', edit_airplane_path(a.id) %>
+      <%= link_to 'Delete', a, :method=>'delete' %>
+    </div>
   </div>
 <% end %>

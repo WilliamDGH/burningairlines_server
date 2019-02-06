@@ -12,6 +12,12 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <nav>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Airplane', airplanes_path %>
+      <%= link_to 'Flight', flights_path %>
+      
+    </nav>
     <%= yield %>
   </body>
 </html>

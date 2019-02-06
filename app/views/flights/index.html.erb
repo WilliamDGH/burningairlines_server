@@ -1,0 +1,20 @@
+<h1>Flights#index</h1>
+
+<%= link_to 'New', new_flight_path %>
+
+<% @flights.each do |f| %>
+  <div>
+    <%= f.id %>
+    <%= f.flight_number %>
+    <%= f.origin %>
+    <%= f.destination %>
+    <%= f.date %>
+    <%= f.airplane.model %>
+
+    <div class="controls">
+      <%= link_to 'View', f %>
+      <%= link_to 'Edit', edit_flight_path(f.id) %>
+      <%= link_to 'Delete', f, :method=>'delete' %>
+    </div>
+  </div>
+<% end %>
