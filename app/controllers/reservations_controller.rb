@@ -5,6 +5,9 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.create strong_params
+    flight = @reservation.flight
+    flight.booked_seats.push([@reservation.row, @reservation.column])
+    flight.save
 
     redirect_to @reservation
   end
